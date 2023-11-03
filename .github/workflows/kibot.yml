@@ -2,9 +2,13 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-
 name: "KiBot CI"
-on: [push, pull_request] 
+on:
+  push:
+    tags:        
+      - '**'
+    paths:
+      - pcb/**
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,7 +26,7 @@ jobs:
 
     - name: Run KiBot
       run: |
-        kibot -b "pcb/so-dimm-esp32-cm.kicad_pcb"
+        kibot -b "pcb/project.kicad_pcb"
       
     - name: Upload results
       uses: actions/upload-artifact@v3
