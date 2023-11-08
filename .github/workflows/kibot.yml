@@ -5,10 +5,12 @@
 name: "KiBot CI"
 on:
   push:
-    tags:        
-      - '**'
+    workflow_dispatch:
     paths:
       - pcb/**
+    tags:        
+      - '**'
+    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
