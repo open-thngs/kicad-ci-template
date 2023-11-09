@@ -4,8 +4,8 @@
 
 name: "KiBot CI"
 on:
+  workflow_dispatch:
   push:
-    workflow_dispatch:
     paths:
       - pcb/**
     tags:        
